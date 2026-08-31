@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هدية خاصة لماري بمناسبة دخولها 18 🌸</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+      
+        body {
+            background-color: #ffdeeb;
+            background-image: url('https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG19.png');
+            background-size: 80px 80px;
+            background-repeat: repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #4a4a4a;
+            padding: 20px 10px;
+        }
+
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(255, 230, 240, 0.75);
+            z-index: -1;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px 20px;
+            border-radius: 28px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+            border: 3px solid #ffb3d1;
+            position: relative;
+        }
+
+     
+        .container.transparent-gallery {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            max-width: 600px;
+        }
+
+        .flower-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+            100% { transform: scale(1); }
+        }
+
+        h2 {
+            color: #d65a7f;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        p {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #ffb6c1;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 18px;
+            outline: none;
+            transition: 0.3s;
+            background: #fff5f7;
+            letter-spacing: 2px;
+        }
+
+        input:focus {
+            border-color: #d65a7f;
+            box-shadow: 0 0 8px rgba(214, 90, 127, 0.3);
+        }
+
+        button.btn-main {
+            margin-top: 15px;
+            width: 100%;
+            padding: 12px;
+            background: #d65a7f;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button.btn-main:hover {
+            background: #b84365;
+        }
+
+        .error-msg {
+            color: #e63946;
+            font-size: 13px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* الصفحات المختلفة */
+        .page-section {
+            display: none;
+        }
+
+        
+        .grid-gifts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .kitty-card {
+            background: #fff0f5;
+            border: 2px solid #ffb3d1;
+            border-radius: 20px;
+            padding: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(255, 182, 193, 0.2);
+            min-height: 160px;
+        }
+
+        .kitty-card:hover {
+            transform: translateY(-5px);
+            background: #ffe4e1;
+            box-shadow: 0 8px 15px rgba(214, 90, 127, 0.3);
+        }
+
+        .kitty-card img {
+            width: 85px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 8px;
+        }
+
+        .kitty-card span {
+            color: #d65a7f;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+   
+        .eye-img {
+            width: 240px;
+            height: 240px;
+            object-fit: cover;
+            margin: 15px 0;
+            border-radius: 20px;
+            border: 3px solid #ffb3d1;
+            box-shadow: 0 6px 15px rgba(214, 90, 127, 0.2);
+        }
+
+        .eye-poem {
+            background: #fff0f3;
+            padding: 15px;
+            border-radius: 16px;
+            border: 1px dashed #ffb3d1;
+            color: #d65a7f;
+            font-size: 15px;
+            line-height: 1.8;
+            font-weight: bold;
+        }
+
+
+        .queen-title {
+            background: rgba(255, 255, 255, 0.9);
+            color: #d65a7f;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 10px 22px;
+            border-radius: 25px;
+            display: inline-block;
+            margin: 10px 0 25px 0;
+            border: 2px dashed #ffb3d1;
+            box-shadow: 0 6px 15px rgba(255, 182, 193, 0.5);
+        }
+
+        .camera-photos-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 5px;
+        }
+
+        /* تصميم برواز صور الكاميرا الفورية (Polaroid) */
+        .scattered-photo {
+            position: relative;
+            width: 125px;
+            background: #ffffff;
+            padding: 8px 8px 24px 8px; /* القاعدة العريضة تحت الصورة */
+            border-radius: 4px;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            border: 1px solid #eaeaea;
+        }
+
+        .scattered-photo img {
+            width: 100%;
+            height: 125px;
+            object-fit: cover;
+            display: block;
+            border-radius: 2px;
+        }
+
+        .scattered-photo:hover {
+            transform: scale(1.25) rotate(0deg) !important;
+            z-index: 50;
+            box-shadow: 0 12px 25px rgba(214, 90, 127, 0.35);
+        }
+
+        /* توزيع انتشار الصور: واحدة يمين وواحدة يسار بزوايا مختلفة */
+        .rot-1 { transform: rotate(-8deg) translateX(-6px); }
+        .rot-2 { transform: rotate(7deg) translateX(6px); }
+        .rot-3 { transform: rotate(-12deg) translateX(-8px); }
+        .rot-4 { transform: rotate(10deg) translateX(8px); }
+        .rot-5 { transform: rotate(-6deg) translateX(-4px); }
+        .rot-6 { transform: rotate(11deg) translateX(7px); }
+        .rot-7 { transform: rotate(-10deg) translateX(-7px); }
+        .rot-8 { transform: rotate(8deg) translateX(5px); }
+        .rot-9 { transform: rotate(-9deg) translateX(-5px); }
+        .rot-10 { transform: rotate(12deg) translateX(8px); }
+        .rot-11 { transform: rotate(-7deg) translateX(-5px); }
+        .rot-12 { transform: rotate(9deg) translateX(6px); }
+        .rot-13 { transform: rotate(-11deg) translateX(-7px); }
+        .rot-14 { transform: rotate(6deg) translateX(4px); }
+        .rot-15 { transform: rotate(-8deg) translateX(-6px); }
+
+        /* 3. قسم الموسيقى */
+        .music-player {
+            background: #fff0f3;
+            border: 2px solid #ffb6c1;
+            border-radius: 20px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .vinyl-record {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #333;
+            margin: 10px auto;
+            border: 4px solid #ffb6c1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: spin 5s linear infinite;
+            animation-play-state: paused;
+        }
+
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* 4. قسم الرسالة الورقية والتنسيق الجديد */
+        .letter-paper {
+            background: #fffbfe;
+            border: 2px solid #ffccd5;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: right;
+            line-height: 2.2; /* مسافة أفضل بين الأسطر للقراءة */
+            color: #555;
+            font-size: 15px;
+            box-shadow: inset 0 0 10px rgba(255, 182, 193, 0.1);
+        }
+
+        .letter-paper::before {
+            content: "🎀 🌸 🎀";
+            display: block;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .letter-title {
+            color: #d65a7f;
+            font-size: 20px;
+            font-weight: bold;
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #ffccd5;
+            padding-bottom: 5px;
+        }
+
+        .letter-paragraph {
+            margin-bottom: 15px;
+        }
+
+        /* زر العودة للرئيسية */
+        .home-btn {
+            background: #ffb3d1;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 22px;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(214, 90, 127, 0.3);
+            transition: 0.2s;
+        }
+
+        .home-btn:hover {
+            transform: scale(1.1);
+            background: #d65a7f;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="birthday-song" src="https://files.catbox.moe/foddri.mp3"></audio>
+
+    <div class="container" id="lock-screen">
+        <div class="flower-icon">🌸🔒🌸</div>
+        <h2>مارييييييي عيدددد مييلااددد سعيددد 🥳🥳🥳</h2>
+        <p>اكتبي شي صار اليوم او سنة بدت اول مره لك اثنينهم ثحح</p>
+        <input type="password" id="passInput" placeholder="دخلني الرمز عشان تاخذي هديتك...">
+        <button class="btn-main" onclick="checkPassword()">جربي تفتحيه ✨</button>
+        <div class="error-msg" id="error">غبيه مين يغلط بالرمز</div>
+    </div>
+
+    <div class="container page-section" id="menu-screen">
+        <h2 style="color: #d65a7f; font-size: 20px;">تفضلي هديتي البسيطة المتواضعة 😋💕</h2>
+        <p style="font-size: 13px; color: #888;">كل مكان فيه شي حاولت اسوي فيها اشياء حلوه 😋
+        ادخلي اول مكان حق الاغاني </p>
+
+        <div class="grid-gifts">
+            <div class="kitty-card" onclick="showSection('bouquet-screen')">
+                <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG10.png" alt="Spider-Man Kitty" fetchpriority="high">
+                <span>👁️سحر عيونك</span>
+            </div>
+
+            <div class="kitty-card" onclick="showSection('letter-screen')">
+                <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG16.png" alt="Birthday Kitty" fetchpriority="high">
+                <span> 💌رسالتي</span>
+            </div>
+
+            <div class="kitty-card" onclick="showSection('gallery-screen')">
+                <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG24.png" alt="Camera Kitty" fetchpriority="high">
+                <span>📸 صور لملكة الجمال</span>
+            </div>
+
+            <div class="kitty-card" onclick="showSection('music-screen')">
+                <img src="https://pngimg.com/uploads/hello_kitty/hello_kitty_PNG8.png" alt="Pink Kitty" fetchpriority="high">
+                <span>الاغانيي😋</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container page-section" id="bouquet-screen">
+        <h2>سِحْرُ العُيُونِ 👁️✨</h2>
+        <img class="eye-img" src="https://i.ibb.co/XZTMR1dH/Screenshot-20260825-205811-Instagram.jpg" alt="عين ماري" loading="lazy">
+        <div class="eye-poem">
+            وَمَا كُنْتُ مِمَّنْ يَدْخُلُ العِشْقُ قَلْبَهُ <br>
+            وَلَكِنَّ مَنْ يُبْصِرْ جُفُونَكِ يَعْشَقِ 💕<br><br>
+            عينَاكِ بَحْرٌ فِيهِمَا السِّحْرُ يُرْسَى <br>
+            وَفِي سَوَادِهِمَا كُلُّ الحُسْنِ يَبْقَى ✨<br><br>
+            يَا فِتْنَةَ العَيْنِ لاَ تَقْضِي بِهَجْرِكِ <br>
+            فَإِنَّ قَلْبِي بِلُحْظِ العَيْنِ يَنْسَحِقُ 💖<br><br>
+            مَلَكْتِ عُيُوناً لاَ أُطِيقُ لَهَا لَمْحاً <br>
+            فَمَا بَالُ قَلْبِي حِينَ أَنْظُرُ يَعْشَقُ؟ 💞
+        </div>
+        <button class="home-btn" onclick="showSection('menu-screen')">🏠</button>
+    </div>
+
+    <div class="container page-section" id="letter-screen">
+        <h2>رسالتي 💌</h2>
+        <div class="letter-paper">
+            <div class="letter-title">HAPPYYYYY BIRTHDAYYYYY MARIA</div>
+            <div class="letter-title">🥳🥳🌹🌹🌹🌹🌹🌹🥳🥳</div>
+
+            <div class="letter-paragraph">
+                كل عام وانتي بالف خيرر وينعاد عليكي بالصحة والسلامة وعقبالك ال١٠٠ سنة. حبيت اقدم لك ذي الهدية البسيطة كنت ابي افضل من كذا لكن الطرق باقيه صعبه 💔 معرفت وش لكن ان شاء الله ما تكون اخر هدية مني لك ان كانت كبيرة او صغيرة رسالة او ورد وكيك او اي شي ولا تتوقع كل مره بحتفل لاني بنسى على الاغلب عادي بتلاقيني نسيت السنة الجاية.
+            </div>
+
+            <div class="letter-paragraph">
+                اول شي شكراااا على اهتمامك فيني وعلى معاملتك الحلوه معايا وعلى مسامحتك لي شكرااا من قلبيي مواححححح💓💓 على كلشي وثاني شي اسف على كل كلشي. صح انك سامحتيني على غلطتي لكن لسه ماني قادر اسامح نفسي صراحة، صح انه الانسان يغلط لكن مقهور اني غلط ونسيت كانه شي طبيعي، الشي الي كنت اتجنبه سويته وكانه شي طبيعي، اخخخ بس خنت الثقة والامانه الي كانت بينا. شكرا انك وثقتي فيني مره ثانيه حتى لو ما كانت ذيك الثقة ولكن ياه.
+            </div>
+
+            <div class="letter-paragraph">
+                ادري اني بجيح لو بطلب شي زي كذا ولكن اتمنى تاخذي راحتك زي اول خاصة بالفويسات. صدقيني ابدا ماكنت اقصد انك مزعجه او شي من ذا، في سوء تفاهم صار لانه انتي مستحيل تقدري تشوفي كل الكلام حتى لو عطيتك الحساب وقلت لك دوري ما بتقدري تلاقي، لكن لسه ذا مو بعذرابدااا على الكلام الي قلته. المهم اسف ووعدت نفسي اني بحاول اسعدك واقدم لك كلشي تقريبا باي طريقة دامني حي او اذا ما اختفيتي عني زي مثلا تزوجتي او عطيتيني بلوك والخ، فاا ياه نشوف وش بيصير.
+            </div>
+
+            <div class="letter-paragraph">
+                نحبك بزاف. احبك، يمكن تشوفيني بس معجب او ماخذ الموضوع لعبة لكن لا، ماني معجب اعرف الفرق ومحب اخذ الموضوع لعبة خاصة اذا كان في طرف ثاني لانه بيكون لعب بالمشاعر فاا يب. مدري ليه قلبي حبك او ايش السبب لكن خلاص ما عادني مهتم اعرف السبب  لانه يمكن ويمكن وما بخلص،ايش السبب معرف، بس الي اعرفه قلبي يحبك. ادري تعبتك معايا اخر فترة لكن وش اسوي خلاص كبرت بالسن ههههههههههه، جد خلاص عقليا وقلبياَ بمستوى سيئ صراحة يلا العقل تحسن اتوقع بسبب الراحة  المهم يمكن ما تحسي بشي او ما تعني لك ذي الهدية  شي لكن حبيت 
+                اقدمها واذا ما حسيتي بشي او ما عجبتك لا تسلكي او تحاولي تجاملي او تحاولي تصطنعي المشاعر خلك على طبيعتك عادي ما بزعل.
+            </div>
+
+            <div class="letter-paragraph">
+                المهمم معليناا, حبيت اسوي الموقع ذا اول موقع اسويه بحياتي كامله. سويته بعد ما فشلت خططي انه اجبلك ورد او هدية، ابي ارسلك لازم اعرف رقمك وعنوانك عشان يوصلك، رقمك مو معايا ولا عنوانك، استحيت اطلب رقمك احس غريب، ولكن مافي فايدة اصلا لو اخذته بسبب يمكن تكوني ببيتك الاول او الثاني او عند اختك وانا لازم اتوقع، فاا يب قلت اكلم شخص قريب منك بعدين قلت يمكن ما بيعجبها فاا كنسلت، قلت ما اتواصل مع حدا افضل. اتمنى انه عجبك وكل عامممم وانتي بخيررررر اخيرا كبرتي وما صرتي قاصرة.
+            </div>
+
+            <p style="text-align: left; margin-top: 15px; font-weight: bold; color: #d65a7f;">Forever Yours 💕</p>
+        </div>
+        <button class="home-btn" onclick="showSection('menu-screen')">🏠</button>
+    </div>
+
+    <div class="container page-section transparent-gallery" id="gallery-screen">
+        <div class="queen-title">👑 ملكة جمال العالم 👑</div>
+
+        <div class="camera-photos-container">
+            <div class="scattered-photo rot-1">
+                <img src="https://i.ibb.co/yBKFc524/IMG-20260822-192120-475.jpg" alt="ماري" loading="lazy">يعمريي على الطفلة ذي😍
+            </div>
+            <div class="scattered-photo rot-2">
+                <img src="https://i.ibb.co/TqT81ynS/IMG-20260822-231814-123.jpg" alt="ماري" loading="lazy">منبع الكياته ياخي كيوتتت💓
+            </div>
+            <div class="scattered-photo rot-3">
+                <img src="https://i.ibb.co/PsY5n4K0/Screenshot-20260822-193839-Instagram.jpg" alt="ماري" loading="lazy">مستحقة ملكة جمال العالم🤝
+            </div>
+            <div class="scattered-photo rot-4">
+                <img src="https://i.ibb.co/BKfPTnHL/Screenshot-20260822-193740-Instagram.jpg" alt="ماري" loading="lazy">عينك لوحدها سحر😌
+            </div>
+            <div class="scattered-photo rot-5">
+                <img src="https://i.ibb.co/WvNftzyr/Screenshot-20260823-000237-Instagram.jpg" alt="ماري" loading="lazy">ذويقههه دايما ذوقك حلو 😋
+            </div>
+            <div class="scattered-photo rot-6">
+                <img src="https://i.ibb.co/C5WJyyL7/Screenshot-20260823-000252-Instagram.jpg" alt="ماري" loading="lazy">bad girl😝
+            </div>
+            <div class="scattered-photo rot-7">
+                <img src="https://i.ibb.co/YFnRJ9Hp/Screenshot-20260823-135804-Instagram.jpg" alt="ماري" loading="lazy">الاستاذة ماري😣
+            </div>
+            <div class="scattered-photo rot-8">
+                <img src="https://i.ibb.co/yFv87GRJ/IMG-20260825-191240-365.jpg" alt="ماري" loading="lazy">تخيلوا ذي الكيوت كانت تضرب العيال
+            </div>
+            <div class="scattered-photo rot-9">
+                <img src="https://i.ibb.co/jXGzyXd/IMG-20260823-190446-453.jpg" alt="ماري" loading="lazy">وش الكياته ذي مين ذي القمرر😍
+            </div>
+            <div class="scattered-photo rot-10">
+                <img src="https://i.ibb.co/7J81YjJc/Screenshot-20260825-192206-Instagram.jpg" alt="ماري" loading="lazy">اخخخ بس تعبت من الكلام كلامي ما بيخلص لو بتكلم
+            </div>
+            <div class="scattered-photo rot-11">
+                <img src="https://i.ibb.co/rR2PkjmB/Screenshot-20260825-192306-Instagram.jpg" alt="ماري" loading="lazy">CAUSE I'M IN ...
+            </div>
+            <div class="scattered-photo rot-12">
+                <img src="https://i.ibb.co/SHK3Whp/Screenshot-20260825-195626-Instagram.jpg" alt="ماري" loading="lazy">CUTE GIRLLL💓
+            </div>
+            <div class="scattered-photo rot-13">
+                <img src="https://i.ibb.co/Q3zP61Nk/Screenshot-20260825-195605-Instagram.jpg" alt="ماري" loading="lazy">تخبللل ستايلاتكك😣
+            </div>
+            <div class="scattered-photo rot-14">
+                <img src="https://i.ibb.co/vx21bP9Q/Screenshot-20260825-195517-Instagram.jpg" alt="ماري" loading="lazy">Elle est belle, créative et ravissante
+            </div>
+            <div class="scattered-photo rot-15">
+                <img src="https://i.ibb.co/C3Pc1Kyb/Screenshot-20260826-081421-Instagram.jpg" alt="ماري" loading="lazy">Seni seviyorum💓
+            </div>
+        </div>
+
+        <button class="home-btn" onclick="showSection('menu-screen')">🏠</button>
+    </div>
+
+    <div class="container page-section" id="music-screen">
+        <h2>اغينة اخترتها باناقة شغليها وروحي للباقي🎵</h2>
+        <div class="music-player">
+            <div class="vinyl-record" id="vinyl">
+                <span style="font-size: 25px;">🎀</span>
+            </div>
+            <p style="color: #d65a7f; font-weight: bold; margin-top: 10px;">لا تنسي تقوليلي كيف الاغنية وتقيمي اختياري ✨</p>
+            <button class="btn-main" onclick="toggleSong()" id="song-btn">تشغيل الأغنية 🎶</button>
+        </div>
+        <button class="home-btn" onclick="showSection('menu-screen')">🏠</button>
+    </div>
+
+    <script>
+        // التحقق من الرقم السري
+        function checkPassword() {
+            const input = document.getElementById('passInput').value;
+            const error = document.getElementById('error');
+            
+            if (input === "2008" || input === "18") {
+                document.getElementById('lock-screen').style.display = 'none';
+                document.getElementById('menu-screen').style.display = 'block';
+                error.style.display = 'none';
+            } else {
+                error.style.display = 'block';
+            }
+        }
+
+        // التنقل بين الأقسام
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.container');
+            sections.forEach(sec => {
+                sec.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        // تم تحديث الدالة لتشغيل وإيقاف الصوت محلياً
+        function toggleSong() {
+            const song = document.getElementById('birthday-song');
+            const btn = document.getElementById('song-btn');
+            const vinyl = document.getElementById('vinyl');
+
+            if (song.paused) {
+                song.play();
+                btn.innerText = "إيقاف مؤقت ⏸️";
+                vinyl.style.animationPlayState = 'running';
+            } else {
+                song.pause();
+                btn.innerText = "تشغيل الأغنية 🎶";
+                vinyl.style.animationPlayState = 'paused';
+            }
+        }
+    </script>
+</body>
+</html>
